@@ -9,6 +9,15 @@
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
 		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
 		"ghcr.io/jayree/devcontainer-features/sf-autocomplete:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"donjayamanne.git-extension-pack",
+				"donjayamanne.githistory",
+				"eamodio.gitlens"
+			]
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
