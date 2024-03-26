@@ -1,14 +1,18 @@
 version: '3.8'
 services:
-  devcontainer:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  frontend:
+    image: mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye
     volumes:
-      - ../..:/workspaces:cached
-    network_mode: service:db
+      - .:/workspace:cached
     command: sleep infinity
-    depends_on:
+    links:
+      - backend
+  backend:
+    image: mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
+    links:
       - db
   db:
     image: postgres:latest
@@ -19,6 +23,6 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
-
+    command: sleep infinity
 volumes:
   postgres-data:
