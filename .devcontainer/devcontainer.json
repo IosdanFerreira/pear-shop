@@ -1,51 +1,53 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "pear-shop",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerFile": "Dockerfile",
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
-		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
-		"ghcr.io/jayree/devcontainer-features/sf-autocomplete:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"donjayamanne.git-extension-pack",
-				"donjayamanne.githistory",
-				"eamodio.gitlens",
-				"ms-azuretools.vscode-docker",
-				"MS-CEINTL.vscode-language-pack-pt-BR",
-				"alefragnani.project-manager",
-				"codezombiech.gitignore",
-				"mikestead.dotenv",
-				"usernamehw.errorlens",
-				"streetsidesoftware.code-spell-checker",
-				"streetsidesoftware.code-spell-checker-portuguese-brazilian",
-				"dbaeumer.vscode-eslint",
-				"esbenp.prettier-vscode",
-				"rvest.vs-code-prettier-eslint",
-				"Prisma.prisma",
-				"Prisma.prisma-insider",
-				"YoavBls.pretty-ts-errors"
-			]
-		}
-	}
+  "name": "pear-shop",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/pear-shop",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/jayree/devcontainer-features/sf-autocomplete:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "donjayamanne.git-extension-pack",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "MS-CEINTL.vscode-language-pack-pt-BR",
+        "alefragnani.project-manager",
+        "codezombiech.gitignore",
+        "mikestead.dotenv",
+        "usernamehw.errorlens",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "Prisma.prisma",
+        "Prisma.prisma-insider",
+        "YoavBls.pretty-ts-errors"
+      ]
+    }
+  },
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [4000, 5432]
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "yarn install",
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  // Configure tool-specific properties.
+  // "customizations": {},
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
