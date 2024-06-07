@@ -13,21 +13,21 @@ export default function SelectSize({ sizes }: ISelectSize) {
     setSelectedSize(size);
   };
   return (
-    <div className='items-center gap-3 mb-3'>
-      <span className='block text-[1rem] font-bold text-[#353535] mb-2'>Tamanho</span>
+    <div className='items-center gap-2 mb-4'>
+      <span className='block text-[.9rem] font-bold text-[#353535] mb-2'>Tamanho</span>
 
-      <div className='flex flex-wrap gap-3'>
+      <div className='flex flex-wrap gap-2'>
         {sizes?.map((size) => (
           <button
             key={size}
-            className='flex items-center justify-center w-[40px] h-[40px] font-bold text-[14px] border border-[#353535] bg-[#fff] hover:bg-[#e6e6e6] rounded-full text-[#353535] hover:text-[#000]'
+            className='flex items-center justify-center w-[30px] h-[30px] font-medium text-[12px] border border-[#818181] bg-[#fff] rounded-md text-[#353535] hover:text-[#242424]'
             style={{
-              backgroundColor: size === selectedSize ? '#242424' : 'transparent',
-              color: size === selectedSize ? '#fff' : '#353535',
+              backgroundColor: size === selectedSize ? '#4A2FED' : 'transparent',
+              color: size === selectedSize ? '#fff' : '#242424',
             }}
             onClick={() => selectSizeFn(size)}
           >
-            {size}
+            <span className='text-[.8rem]'>{size}</span>
           </button>
         ))}
       </div>

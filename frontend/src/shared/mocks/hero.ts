@@ -2,14 +2,6 @@ import { IHero } from '@/@types';
 
 export const heroMock: IHero[] = [
   {
-    title: 'Coleção de inverno',
-    subTitle: 'Deslumbre-se com Moda que Aquece',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolorem maxime, asperiores veniam incidunt numquam, perspiciatis reprehenderit voluptatibus ducimus',
-    textColor: '#fff',
-    urlLink: '/',
-    backgroundImage: 'https://img.freepik.com/fotos-premium/mulher-senior-sorridente-com-lenco-e-chapeu-de-trico-olhando-para-longe-em-fundo-pastel-com-espaco-de-texto_174533-21511.jpg?w=826'
-  },
-  {
     title: 'Shop computers',
     subTitle: 'Shop computers & accessories',
     description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolorem maxime, asperiores veniam incidunt numquam, perspiciatis reprehenderit voluptatibus ducimus',

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { mulish } from '@/components/ui/fonts';
+import { poppins } from '@/components/ui/fonts';
 import './globals.css';
 import { Providers } from '@/provider';
+import Hydration from '@/store/hydration';
 
 export const metadata: Metadata = {
   title: 'Pear Shop',
@@ -15,8 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br'>
-      <body className={`${mulish.className} antialiased bg-[#F4F4F4]`}>
+      <body className={`${poppins.className} antialiased bg-[#fff]`}>
         <Providers>
+          <Hydration />
           {children}
         </Providers>
       </body>

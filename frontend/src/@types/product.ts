@@ -20,9 +20,7 @@ export interface IProduct {
     sold: number;
     rate: number;
     available: boolean;
-    categories: {
-        category: ICategory
-    }[];
+    category: ICategory;
     availableSizes: string[]
     colors: IProductColor[]
     UfOrigin: string

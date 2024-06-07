@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-// components
-import { Button } from '@/components/ui/button';
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
-
 // icons
-import { IoCloseSharp } from 'react-icons/io5';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import MultipleCarousel from '@/components/carousel/multipleCarousel';
-import UniqueCarousel from '@/components/carousel/singleCarousel';
 
 
 interface IProductThumbnail {
@@ -44,7 +38,7 @@ export default function ProductThumbnail({ data }: IProductThumbnail) {
 
       <div className='hidden lg:block w-full'>
         <Dialog>
-          <DialogTrigger className='relative w-full h-[578px] lg:h-[518px] 2xl:h-[608px] px-2'>
+          <DialogTrigger className='relative w-full h-[578px] lg:h-[700px] 2xl:h-[790px] px-2'>
             <Image 
               alt={currentImage}
               src={currentImage}
@@ -53,8 +47,8 @@ export default function ProductThumbnail({ data }: IProductThumbnail) {
             />
           </DialogTrigger>
 
-          <DialogContent className='flex w-[100vw] h-full bg-[#F7F8F8]'>
-            <div className='flex flex-col w-fit gap-1'>
+          <DialogContent className='flex w-[100vw] h-full bg-[#F7F8F8] p-0'>
+            <div className='flex flex-col w-fit gap-1 p-4'>
               {data?.map((item) => (
                 <button
                   key={item?.url} 
@@ -71,14 +65,14 @@ export default function ProductThumbnail({ data }: IProductThumbnail) {
               ))}
             </div>
 
-            <div className='w-full'>
+            <div className='w-full p-4'>
               <div className='flex justify-center'>
-                <figure className='relative w-[669px] 2xl:w-[969px] h-[100vh] px-2'>
+                <figure className='relative w-[465px] 2xl:w-[710px] h-[100vh] px-2'>
                   <Image 
                     alt={currentImage}
                     src={currentImage}
                     fill
-                    className='absolute'
+                    className='absolute pb-9'
                   />
                 </figure>
               </div>

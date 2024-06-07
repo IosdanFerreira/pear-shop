@@ -62,7 +62,8 @@ export default function Header() {
             <Link href='/'>
               <h2 className={`text-2xl md:text-3xl font-bold uppercase ${oswald.className} text-[#222] pb-0`}>Pear Shop</h2>
             </Link>
-          
+
+            
             <Link href='/' className='md:hidden pe-0 flex'>
               <ShoppingCart className='text-[#494949]' />
               <p className='text-[14px] font-bold'>17</p>
@@ -81,8 +82,8 @@ export default function Header() {
             <ul className='flex items-center'>
               {defaultCategories?.map((category) => (
                 <li key={category?.id}>
-                  <Link href='/'
-                    className='block text-[0.74rem] md:text-[0.7rem] lg:text-[0.9rem] hover:bg-[#EBEBEB] md:px-2 lg:px-3 py-1.5'
+                  <Link href={`/category/${category?.name?.toLocaleLowerCase()}`}
+                    className='block text-[0.74rem] md:text-[0.7rem] lg:text-[0.9rem] hover:bg-[#EBEBEB] md:px-2 lg:px-3 py-1.5 pl-0'
                   >
                     {category?.name}
                   </Link>

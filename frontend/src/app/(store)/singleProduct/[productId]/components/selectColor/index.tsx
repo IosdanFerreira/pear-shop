@@ -18,14 +18,14 @@ export default function SelectColor({ colors }: ISelectColor) {
   };
 
   return (
-    <div className='mb-6'>
-      <span className='block text-[1rem] font-bold text-[#353535] mb-2'>Cor</span>
+    <div className='mb-4'>
+      <span className='block text-[.9rem] font-bold text-[#353535] mb-2'>Cor</span>
 
-      <div className='flex gap-3 flex-wrap'>
+      <div className='flex gap-2 flex-wrap'>
         {colors.map((color) => (
           <button
             key={color?.id} 
-            className={'flex items-center justify-center w-[25px] h-[25px] font-bold text-[15px] border-[1.9px] border-[#cacaca] rounded-full text-[#fff]'}
+            className={'flex items-center justify-center w-[25px] h-[25px] font-bold text-[15px] border-[1.9px] border-[#cacaca] rounded-md text-[#fff]'}
             style={{backgroundColor: `${color?.hex}`}}
             onClick={() => selectColorFn(color?.hex)}
           >

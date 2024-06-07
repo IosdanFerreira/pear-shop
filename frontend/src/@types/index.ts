@@ -5,3 +5,4 @@ export * from './collection';
 export * from './productColor';
 export * from './hero';
 export * from './color';
+export * from './shoppingCart';

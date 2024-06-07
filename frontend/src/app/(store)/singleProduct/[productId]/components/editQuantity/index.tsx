@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
 
+interface IEditQuantity {
+  title?: string;
+}
 
-export default function EditQuantity() {
+
+export default function EditQuantity({ title }: IEditQuantity) {
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
@@ -19,25 +23,25 @@ export default function EditQuantity() {
   };
 
   return (
-    <div className='items-center gap-3 mb-3'>
-      <span className='block text-[1rem] font-bold text-[#353535] mb-2'>Quantidade</span>
+    <div className='items-center gap-3'>
+      <span className='block text-[.9rem] font-bold text-[#353535] mb-2'>{title}</span>
 
-      <div className='flex gap-3'>
+      <div className='flex'>
         <button 
-          className='flex items-center justify-center w-[30px] h-[30px] font-bold text-[18px] border border-[#353535] bg-[#fff] hover:bg-[#e6e6e6] rounded-full text-[#353535] hover:text-[#000]'
+          className='flex items-center justify-center w-8 h-8 font-bold text-[18px] border-[1px] border-[#818181] hover:bg-[#e6e6e6] text-[#353535] hover:text-[#000]'
           disabled={selectedQuantity === 1 ?? false}
           onClick={() => decreaseQuantity()}
         >
-          <FaCaretDown />
+          <FaCaretDown className='text-[.9rem]' />
         </button>
 
-        <span className='flex items-center justify-center border border-[#353535] rounded-full w-16 font-bold text-[#353535]'>{selectedQuantity}</span>
+        <span className='flex items-center justify-center w-10 h-8 border-[1px] border-[#818181] font-normal text-[#353535] text-[.9rem] border-l-0 border-r-0'>{selectedQuantity}</span>
 
         <button 
-          className='flex items-center justify-center w-[30px] h-[30px] font-bold text-[18px] border border-[#353535] bg-[#fff] hover:bg-[#e6e6e6] rounded-full text-[#353535] hover:text-[#000]'
+          className='flex items-center justify-center w-8 h-8 font-bold text-[18px] border-[1px] border-[#818181] hover:bg-[#e6e6e6] text-[#353535] hover:text-[#000]'
           onClick={() => increaseQuantity()}
         >
-          <FaCaretUp />
+          <FaCaretUp className='text-[.9rem]' />
         </button>
       </div>
     </div>

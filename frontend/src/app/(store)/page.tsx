@@ -30,139 +30,85 @@ import { heroMock, productsMock, carouselMock } from '@/shared/mocks';
 
 export default function Home() {
   return (
-    <main>
-      <section className='container mb-3'>
+    <main className='px-12'>
+      <section className='mb-12'>
         <Hero data={heroMock} />
       </section>
 
-      <section className='container mb-3 md:mb-7'>
-        <div className='flex flex-col lg:flex-row justify-evenly items-center gap-3'>
-          <Link href={carouselMock?.[0]?.link} className='relative h-[75px] md:h-[140px] w-[100%] lg:w-[50%]'>
-            <Image 
-              key={carouselMock?.[0]?.imageUrl}
-              src={carouselMock?.[0]?.imageUrl}
-              alt={carouselMock?.[0]?.imageUrl}
-              fill
-              className='absolute rounded-md'
-            />
-          </Link>
+      <section className='container mb-20'>
+        <div className='flex flex-col items-center justify-center mb-7'>
+          <h6 className='text-[#8E8F8E] leading-5 text-[.9rem] font-normal mb-4'>Coleção de verão</h6>
+          <h2 className='leading-5 text-[.9rem] md:text-[1.9rem] text-[#000] mb-2 font-black'>Produtos em Destaque</h2>
+        </div>
 
-          <Link href={carouselMock?.[1]?.link} className='relative h-[75px] md:h-[140px] w-[100%] lg:w-[50%]'>
-            <Image 
-              key={carouselMock?.[1]?.imageUrl}
-              src={carouselMock?.[1]?.imageUrl}
-              alt={carouselMock?.[1]?.imageUrl}
-              fill
-              className='absolute rounded-md'
-            />
+        <ProductList productList={productsMock}/>
+      </section>
+
+      <section className='container grid grid-cols-12 gap-5 mb-20'>
+        <div className='grid col-span-7 relative'>
+          <div className='w-full h-[690px] bg-[#FAEDEB] p-20'></div>
+          <Image src='https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/collection-03.jpg' width={490} height={600} alt='Foto' className='absolute -top-9 left-20 2xl:left-48'  />
+        </div>
+
+        <div className='grid col-span-5 relative'>
+          <div className='h-full flex flex-col justify-center absolute -left-20'>
+            <h6 className='text-[#8E8F8E] leading-5 text-[.9rem] font-normal mb-5'>Feminino</h6>
+
+            <h2 className='leading-5 text-[.9rem] md:text-[1.9rem] text-[#000] mb-5 font-black'>Coleção Primavera Verão</h2>
+
+            <p className='text-[#6b6b6b] leading-5 text-[.9rem] font-light mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt deserunt facilis et nemo autem doloribus aut eligendi sunt voluptates suscipit quod consectetur ex vel vero repellat, facere iure est cum.</p>
+
+            <Link href='/' className='block w-fit bg-[#000] hover:bg-[#121212] text-[${item?.textColor}] px-6 py-[9px] rounded-md'>
+              <span className='text-white text-[.7rem] md:text-[.8rem] lg:text-[.9rem]'>Veja a coleção inteira</span>      
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className='overflow-hidden bg-cover relative mb-12' style={{backgroundImage: 'url(https://websitedemos.net/t-shirts-store-04/wp-content/uploads/sites/1115/2022/07/bg-01.jpg)'}}>
+        <div className='absolute z-0 bg-[#000] opacity-[.3] w-full h-full'></div>
+
+        <div className='h-full flex flex-col justify-center items-center py-60 z-20 relative'>
+          <h6 className='text-white leading-5 text-[.9rem] font-normal mb-5'>Feminino</h6>
+
+          <h2 className='leading-5 text-[.9rem] md:text-[2.2rem] text-white mb-7 font-black'>Coleção Primavera Verão</h2>
+
+          <h3 className='leading-5 text-[.9rem] md:text-[1.4rem] text-white mb-5 font-normal'>Encontre seu estilo único</h3>
+
+          <Link href='/' className='block w-fit bg-[#000] hover:bg-[#121212] text-[${item?.textColor}] px-6 py-[9px] rounded-md'>
+            <span className='text-white text-[.7rem] md:text-[.8rem] lg:text-[.9rem]'>Veja a coleção inteira</span>      
           </Link>
         </div>
       </section>
 
-      <section className='container md:mb-7'>
-        <h2 className='text-[.9rem] md:text-[1rem] 2xl:text-[1.1rem] text-[#242424] mb-2 uppercase font-bold'>Produtos em promoção</h2>
-        <MultipleCarousel
-          settings={{
-            slidesToShow: 5,
-            slidesToScroll: 4,
-            dots: false,
-            responsive: [
-              {
-                breakpoint: 769,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  arrows: true,
-                  dots: false
-                }
-              },
-              {
-                breakpoint: 556,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2,
-                  arrows: false,
-                  dots: false
-                }
-              },
-            ],
-          }}
-          dataList={productsMock}
-          renderComponent={(item) => {
-            return (
-              <div className='mx-1'>
-                <ProductCard key={item?.id} product={item} />
-              </div>
-            );
-          }}
-        />
+      <section className='container mb-12'>
+        <div className='flex flex-col items-center justify-center mb-7'>
+          <h6 className='text-[#8E8F8E] leading-5 text-[.9rem] font-normal mb-4'>Coleção de verão</h6>
+          <h2 className='leading-5 text-[.9rem] md:text-[1.9rem] text-[#000] mb-2 font-black'>Produtos em Promoção</h2>
+        </div>
+
+        <ProductList productList={productsMock}/>
       </section>
 
-      <section className='container mb-3 md:mb-7'>
-        <div className='flex flex-col lg:flex-row justify-evenly items-center gap-3'>
-          <Link href={carouselMock?.[0]?.link} className='relative h-[75px] md:h-[140px] w-[100%] lg:w-[50%]'>
-            <Image 
-              key={carouselMock?.[0]?.imageUrl}
-              src={carouselMock?.[0]?.imageUrl}
-              alt={carouselMock?.[0]?.imageUrl}
-              fill
-              className='absolute rounded-md'
-            />
-          </Link>
+      <section className='overflow-hidden bg-cover relative mb-12' style={{backgroundImage: 'url(https://websitedemos.net/custom-printing-02/wp-content/uploads/sites/459/2020/01/banner-02.jpg)'}}>
+        <div className='h-full flex flex-col justify-center items-start py-60 px-24'>
+          <h2 className='leading-5 text-[.9rem] md:text-[2rem] text-[#415161] mb-7 font-black'>Se apresse!</h2>
+          <h2 className='leading-5 text-[.9rem] md:text-[2.2rem] text-[#415161] mb-7 font-black'>Garanta a sua!</h2>
 
-          <Link href={carouselMock?.[1]?.link} className='relative h-[75px] md:h-[140px] w-[100%] lg:w-[50%]'>
-            <Image 
-              key={carouselMock?.[1]?.imageUrl}
-              src={carouselMock?.[1]?.imageUrl}
-              alt={carouselMock?.[1]?.imageUrl}
-              fill
-              className='absolute rounded-md'
-            />
+          <h3 className='leading-5 text-[.9rem] md:text-[1rem] 2xl:text-[1.1rem] text-[#415161] mb-5 font-bold'>Use o código Off20 e garanta 20% de desconto em compras acima de R$150</h3>
+
+          <Link href='/' className='block w-fit bg-[#000] hover:bg-[#121212] text-[${item?.textColor}] px-6 py-[9px] rounded-md'>
+            <span className='text-white text-[.7rem] md:text-[.8rem] lg:text-[.9rem]'>Compar agora</span>      
           </Link>
         </div>
       </section>
 
-      <section className='container md:mb-7'>
-        <h2 className='text-[.9rem] md:text-[1rem] 2xl:text-[1.1rem] text-[#242424] mb-2 uppercase font-bold'>Produtos em promoção</h2>
-        <MultipleCarousel
-          settings={{
-            slidesToShow: 5,
-            slidesToScroll: 4,
-            dots: false,
-            responsive: [
-              {
-                breakpoint: 769,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  arrows: true,
-                  dots: false
-                }
-              },
-              {
-                breakpoint: 556,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2,
-                  arrows: false,
-                  dots: false
-                }
-              },
-            ],
-          }}
-          dataList={productsMock}
-          renderComponent={(item) => {
-            return (
-              <div className='mx-1'>
-                <ProductCard key={item?.id} product={item} />
-              </div>
-            );
-          }}
-        />
-      </section>
+      <section className='container mb-12'>
+        <div className='flex flex-col items-center justify-center mb-7'>
+          <h6 className='text-[#8E8F8E] leading-5 text-[.9rem] font-normal mb-4'>Coleção de verão</h6>
+          <h2 className='leading-5 text-[.9rem] md:text-[1.9rem] text-[#000] mb-2 font-black'>Produtos em Promoção</h2>
+        </div>
 
-      <section className='container'>
-        <h2 className='text-[.9rem] md:text-[1rem] 2xl:text-[1.1rem] text-[#242424] mb-2 uppercase font-bold'>Produtos em Destaque</h2>
         <ProductList productList={productsMock}/>
       </section>
     </main>
